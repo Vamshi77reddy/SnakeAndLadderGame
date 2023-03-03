@@ -97,6 +97,7 @@ int 	r=0;
 		else if(position>100) {
 			position=position-d1;}
 	
+
 	}
 	
 }
