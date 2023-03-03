@@ -71,37 +71,55 @@ public class StartPosition {
 		}
 public static void main(String []args) {
 	int position=0;
+	int position2=0;
 	int count=0;
 int 	r=0;
-	int d1=0;
+	int d1=0,d2=0;
 	System.out.println("Welcome to snake and ladder game");
 	System.out.println("the player is at Position :: 0");
 
 	Scanner sc=new Scanner(System.in);
 	System.out.println("Enter first player1 name :");
 	String p1=sc.nextLine();
+	System.out.println("Entre Second player2 name :");
+	String p2=sc.nextLine();
 	Random random=new Random();
 	StartPosition obj=new StartPosition();
-	while( position<=100){
+	while( position<=100 || position2==100){
 	d1=random.nextInt(6)+1;
 	count++;
+	d2=random.nextInt(6)+1;
+
+	count++;
 	position=position+d1;
+	position2=position2+d2;
+
 	position=obj.snake(position,p1);
 	position=obj.ladder(position,p1);
-	
+	position2=obj.snake(position2,p2);
+	position2=obj.ladder(position2,p2);
 	System.out.println("The dice number is ::" +d1);
 	
 	System.out.println(p1+"'s position is "+position);
+	System.out.println(p2+" dice rolled to : "+d2);
+	System.out.println(p2+"'s position is "+position2);
 	if(position==100) {
 		System.out.println("Congrats....Player1 won");
 		System.out.println("The number of times dice rolled  is ::" +count);
 
 		break;}
-		else if(position>100) {
+		
+		else if(position2==100) {
+			System.out.println("Congrats....Player2 won");
+			System.out.println("Dice count is ::" +count);
+
+			break;
+		}else if(position>100) {
 			position=position-d1;
+		}else if(position2>100) {
+			position2=position2-d2;
 	
-			position=position-d1;
-}
+		}
 	
 
 	}
