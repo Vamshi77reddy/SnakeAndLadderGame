@@ -93,8 +93,10 @@ int 	r=0;
 	if(position==100) {
 		System.out.println("Congrats....Player1 won");
 
-		break;
-	}
+		break;}
+		else if(position>100) {
+			position=position-d1;}
+	
 	}
 	
 }
