@@ -81,17 +81,21 @@ int 	r=0;
 	String p1=sc.nextLine();
 	Random random=new Random();
 	StartPosition obj=new StartPosition();
-	while(r==0 || position==100){
+	while( position<=100){
 	d1=random.nextInt(6)+1;
 	position=position+d1;
 	position=obj.snake(position,p1);
 	position=obj.ladder(position,p1);
-	}
+	
 	System.out.println("The dice number is ::" +d1);
 	
 	System.out.println(p1+"'s position is "+position);
-	
+	if(position==100) {
+		System.out.println("Congrats....Player1 won");
 
+		break;
+	}
+	}
 	
 }
 	}
